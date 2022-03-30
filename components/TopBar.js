@@ -3,7 +3,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { Righteous_400Regular } from '@expo-google-fonts/righteous';
 import { colors0, colors1 } from './ComponentStyles';
-import { Button } from 'react-native-web';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +25,12 @@ const styles = StyleSheet.create({
 });
 
 const AboutButton = () =>
-  <Button />
+  <Icon.Button name="info"
+    backgroundColor={colors1.blued}
+    iconStyle={{ marginLeft: 5, marginRight: 5 }}
+    borderRadius={20}
+    size={15}
+  />;
 
 const TopBar = () => {
   let [fontsLoaded] = useFonts({ Righteous_400Regular });
@@ -40,7 +44,7 @@ const TopBar = () => {
           size={26}
         />
         <Text style={styles.title}>WebEnv</Text>
-        <Text>About</Text>
+        <AboutButton />
       </View>
     );
 };
