@@ -18,21 +18,22 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     color: 'white',
-    paddingLeft: 10,
+    paddingLeft: 15,
     fontSize: 24,
     fontFamily: 'Righteous_400Regular'
   }
 });
 
-const AboutButton = () =>
+const AboutButton = ({ onPress }) =>
   <Icon.Button name="info"
     backgroundColor={colors1.blued}
     iconStyle={{ marginLeft: 5, marginRight: 5 }}
     borderRadius={20}
     size={15}
+    onPress={onPress}
   />;
 
-const TopBar = () => {
+const TopBar = ({ aboutButton }) => {
   let [fontsLoaded] = useFonts({ Righteous_400Regular });
   if (!fontsLoaded) return null;
   else
@@ -44,7 +45,7 @@ const TopBar = () => {
           size={26}
         />
         <Text style={styles.title}>WebEnv</Text>
-        <AboutButton />
+        <AboutButton onPress={aboutButton} />
       </View>
     );
 };
