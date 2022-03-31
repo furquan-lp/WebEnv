@@ -18,7 +18,14 @@ const styles = StyleSheet.create({
     padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 10
+    margin: 10,
+    shadowColor: colors1.blued,
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 1,
+    shadowRadius: 4,
   },
   text: {
     fontSize: 38,
