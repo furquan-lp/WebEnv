@@ -1,5 +1,6 @@
 import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 import { colors0, colors1 } from './ComponentStyles';
 
 const styles = StyleSheet.create({
@@ -12,10 +13,10 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: colors0.mist,
     borderRadius: 10,
     height: 130,
-    padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 38,
+    margin: 5,
     letterSpacing: 1
   }
 });
@@ -40,10 +42,22 @@ const Cards = ({ temperature, humidity }) =>
 
 
 const TempCard = ({ temperature }) =>
-  <View style={styles.card}><Text style={styles.text}>{temperature}*C</Text></View>;
+  <View style={styles.card}>
+    <Icon
+      name="thermometer"
+      color={colors1.blued}
+      size={55} />
+    <Text style={styles.text}>{temperature}*C</Text>
+  </View>;
 
 const HumidCard = ({ humidity }) =>
-  <View style={styles.card}><Text style={styles.text}>{humidity}%</Text></View>;
+  <View style={styles.card}>
+    <Icon
+      name="droplet"
+      color={colors1.blued}
+      size={55} />
+    <Text style={styles.text}>{humidity}%</Text>
+  </View>;
 
 
 export default Cards;
