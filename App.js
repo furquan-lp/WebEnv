@@ -12,7 +12,7 @@ import bgImage from './assets/background.jpg';
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors1.verdigris,
+    //backgroundColor: colors1.verdigris,
     alignItems: 'stretch',
     //justifyContent: 'center',
     display: 'block'
@@ -38,16 +38,20 @@ const App = () => {
       style={style.bgImage}
       blurRadius={10}>
       <View style={style.webWrapper}>
-        <View style={style.container}>
-          <StatusBar
-            animated={true}
-            backgroundColor={colors0.blued}
-            hidden={false} />
-          <TopBar aboutButton={() => setModalVisible(true)} />
-          <AboutModal visible={visible} setModalVisible={setModalVisible} />
-          <Cards temperature={33.4} humidity={61} />
-        </View>
-      </View></ImageBackground>
+        <ImageBackground source={bgImage}
+          style={style.bgImage}>
+          <View style={style.container}>
+            <StatusBar
+              animated={true}
+              backgroundColor={colors0.blued}
+              hidden={false} />
+            <TopBar aboutButton={() => setModalVisible(true)} />
+            <AboutModal visible={visible} setModalVisible={setModalVisible} />
+            <Cards temperature={33.4} humidity={61} />
+          </View>
+        </ImageBackground>
+      </View>
+    </ImageBackground >
   );
 };
 
