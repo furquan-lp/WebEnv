@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     color: 'white',
-    paddingLeft: 15,
+    marginLeft: 15,
     fontSize: 24,
     fontFamily: 'Righteous_400Regular'
   }
