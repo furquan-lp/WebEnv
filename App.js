@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, ImageBackground } from 'react-native';
+import { StyleSheet } from 'react-native';
+
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
 import { colors0, colors1 } from './components/ComponentStyles';
-import { StyleSheet } from 'react-native';
+
+import bgImage from './assets/background.jpg';
 
 const style = StyleSheet.create({
   container: {
@@ -19,23 +22,32 @@ const style = StyleSheet.create({
     height: 720,
     width: 480,
     alignSelf: 'center'
+  },
+  bgImage: {
+    flex: 1
   }
 });
+
+const WebWrapper = () =>
+  <View style={style.webWrapper}></View>;
 
 const App = () => {
   const [visible, setModalVisible] = useState(false);
   return (
-    <View style={style.webWrapper}>
-      <View style={style.container}>
-        <StatusBar
-          animated={true}
-          backgroundColor={colors0.blued}
-          hidden={false} />
-        <TopBar aboutButton={() => setModalVisible(true)} />
-        <AboutModal visible={visible} setModalVisible={setModalVisible} />
-        <Cards temperature={33.4} humidity={61} />
-      </View>
-    </View>
+    <ImageBackground source={bgImage}
+      style={style.bgImage}
+      blurRadius={10}>
+      <View style={style.webWrapper}>
+        <View style={style.container}>
+          <StatusBar
+            animated={true}
+            backgroundColor={colors0.blued}
+            hidden={false} />
+          <TopBar aboutButton={() => setModalVisible(true)} />
+          <AboutModal visible={visible} setModalVisible={setModalVisible} />
+          <Cards temperature={33.4} humidity={61} />
+        </View>
+      </View></ImageBackground>
   );
 };
 
