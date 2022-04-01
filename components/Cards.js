@@ -2,11 +2,7 @@ import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { colors0, colors1 } from './ComponentStyles';
-import { Platform } from 'react-native';
-
-const isWeb = () => {
-  return (Platform.OS === 'web');
-}
+import utils from '../services/WEUtils';
 
 const styles = StyleSheet.create({
   cards: {
@@ -38,13 +34,13 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors0.blued,
-    fontSize: isWeb() ? 44 : 34,
+    fontSize: utils.isWeb() ? 44 : 34,
     fontWeight: 'bold',
     margin: 0,
     letterSpacing: 1
   },
   subtitle: {
-    fontSize: isWeb() ? 36 : 30,
+    fontSize: utils.isWeb() ? 36 : 30,
     alignSelf: 'flex-end',
     margin: 5,
     marginTop: 0,
@@ -64,7 +60,7 @@ const TempCard = ({ temperature }) => {
         <Icon
           name="thermometer"
           color={colors1.blued}
-          size={isWeb() ? 70 : 50} />
+          size={utils.isWeb() ? 70 : 50} />
         <Text style={styles.text}>{temperature}&#176;C</Text>
       </View>
       <Text style={styles.subtitle}>73&#176;F</Text>
@@ -76,7 +72,7 @@ const HumidCard = ({ humidity }) =>
     <Icon
       name="droplet"
       color={colors1.blued}
-      size={isWeb() ? 80 : 55} />
+      size={utils.isWeb() ? 80 : 55} />
     <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}%</Text>
   </View>;
 
