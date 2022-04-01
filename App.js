@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { View, StatusBar, ImageBackground } from 'react-native';
-import { Platform } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
 import { colors0, colors1 } from './components/ComponentStyles';
+
+import utils from './services/WEUtils';
 
 import bgImage from './assets/background.jpg';
 
@@ -47,7 +48,7 @@ const WebEnv = () => {
 };
 
 const App = () => {
-  if (Platform.OS === 'web') {
+  if (utils.isWeb()) {
     return (
       <ImageBackground source={bgImage}
         style={style.bgImage}
