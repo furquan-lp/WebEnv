@@ -6,17 +6,14 @@ import { colors0, colors1 } from './ComponentStyles';
 const styles = StyleSheet.create({
   cards: {
     flex: 1,
-    //alignItems: 'center',
-    //justifyContent: 'center',
     flexDirection: 'row',
     padding: 5,
   },
   card: {
     flex: 1,
-    flexDirection: 'row',
     backgroundColor: colors0.mist,
     borderRadius: 10,
-    height: 130,
+    height: 150,
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
@@ -28,10 +25,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 4,
   },
+  wrapper: {
+    flexDirection: 'row'
+  },
   text: {
-    fontSize: 38,
+    //color: colors0.blued,
+    fontSize: 44,
     margin: 5,
-    letterSpacing: 1
+    letterSpacing: 4
+  },
+  subtitle: {
+    fontSize: 36,
+    alignSelf: 'flex-end',
+    margin: 5,
+    letterSpacing: 2
   }
 });
 
@@ -41,17 +48,22 @@ const Cards = ({ temperature, humidity }) =>
   </View>;
 
 
-const TempCard = ({ temperature }) =>
-  <View style={styles.card}>
-    <Icon
-      name="thermometer"
-      color={colors1.blued}
-      size={55} />
-    <Text style={styles.text}>{temperature}*C</Text>
-  </View>;
+const TempCard = ({ temperature }) => {
+  return (
+    <View style={styles.card}>
+      <View style={styles.wrapper}>
+        <Icon
+          name="thermometer"
+          color={colors1.blued}
+          size={62} />
+        <Text style={styles.text}>{temperature}&#176;C</Text>
+      </View>
+      <Text style={styles.subtitle}>73&#176;F</Text>
+    </View>);
+};
 
 const HumidCard = ({ humidity }) =>
-  <View style={styles.card}>
+  <View style={[styles.card, styles.wrapper]}>
     <Icon
       name="droplet"
       color={colors1.blued}
