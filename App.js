@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { View, StatusBar, ImageBackground } from 'react-native';
+import { Platform } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 import TopBar from './components/TopBar';
@@ -14,8 +15,7 @@ const style = StyleSheet.create({
     flex: 1,
     //backgroundColor: colors1.verdigris,
     alignItems: 'stretch',
-    //justifyContent: 'center',
-    display: 'block'
+    //display: 'block'
   },
   webWrapper: {
     flex: 1,
@@ -28,31 +28,38 @@ const style = StyleSheet.create({
   }
 });
 
-const WebWrapper = () =>
-  <View style={style.webWrapper}></View>;
-
-const App = () => {
+const WebEnv = () => {
   const [visible, setModalVisible] = useState(false);
   return (
     <ImageBackground source={bgImage}
-      style={style.bgImage}
-      blurRadius={10}>
-      <View style={style.webWrapper}>
-        <ImageBackground source={bgImage}
-          style={style.bgImage}>
-          <View style={style.container}>
-            <StatusBar
-              animated={true}
-              backgroundColor={colors0.blued}
-              hidden={false} />
-            <TopBar aboutButton={() => setModalVisible(true)} />
-            <AboutModal visible={visible} setModalVisible={setModalVisible} />
-            <Cards temperature={33.4} humidity={61} />
-          </View>
-        </ImageBackground>
+      style={style.bgImage}>
+      <View style={style.container}>
+        <StatusBar
+          animated={true}
+          backgroundColor={colors0.blued}
+          hidden={false} />
+        <TopBar aboutButton={() => setModalVisible(true)} />
+        <AboutModal visible={visible} setModalVisible={setModalVisible} />
+        <Cards temperature={33.4} humidity={61} />
       </View>
-    </ImageBackground >
+    </ImageBackground>
   );
+};
+
+const App = () => {
+  if (Platform.OS === 'web') {
+    return (
+      <ImageBackground source={bgImage}
+        style={style.bgImage}
+        blurRadius={10}>
+        <View style={style.webWrapper}>
+          <WebEnv />
+        </View>
+      </ImageBackground >
+    );
+  } else {
+    return (<WebEnv />);
+  }
 };
 
 export default App;
