@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    backgroundColor: colors0.mist,
+    backgroundColor: 'rgba(231, 234, 246, 0.5)', // colors0.mist
     borderRadius: 10,
     height: 150,
     alignItems: 'center',
