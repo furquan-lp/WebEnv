@@ -2,6 +2,11 @@ import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { colors0, colors1 } from './ComponentStyles';
+import { Platform } from 'react-native';
+
+const isWeb = () => {
+  return (Platform.OS === 'web');
+}
 
 const styles = StyleSheet.create({
   cards: {
@@ -16,7 +21,7 @@ const styles = StyleSheet.create({
     height: 150,
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 10,
+    margin: 6,
     shadowColor: colors1.blued,
     shadowOffset: {
       width: 0,
@@ -28,16 +33,21 @@ const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row'
   },
+  unjustified: {
+    justifyContent: 'flex-start'
+  },
   text: {
-    //color: colors0.blued,
-    fontSize: 44,
-    margin: 5,
-    letterSpacing: 4
+    color: colors0.blued,
+    fontSize: isWeb() ? 44 : 34,
+    fontWeight: 'bold',
+    margin: 0,
+    letterSpacing: 1
   },
   subtitle: {
-    fontSize: 36,
+    fontSize: isWeb() ? 36 : 30,
     alignSelf: 'flex-end',
     margin: 5,
+    marginTop: 0,
     letterSpacing: 2
   }
 });
@@ -47,7 +57,6 @@ const Cards = ({ temperature, humidity }) =>
     <TempCard temperature={temperature} /><HumidCard humidity={humidity} />
   </View>;
 
-
 const TempCard = ({ temperature }) => {
   return (
     <View style={styles.card}>
@@ -55,7 +64,7 @@ const TempCard = ({ temperature }) => {
         <Icon
           name="thermometer"
           color={colors1.blued}
-          size={62} />
+          size={isWeb() ? 70 : 50} />
         <Text style={styles.text}>{temperature}&#176;C</Text>
       </View>
       <Text style={styles.subtitle}>73&#176;F</Text>
@@ -63,12 +72,12 @@ const TempCard = ({ temperature }) => {
 };
 
 const HumidCard = ({ humidity }) =>
-  <View style={[styles.card, styles.wrapper]}>
+  <View style={[styles.card, styles.wrapper, styles.unjustified]}>
     <Icon
       name="droplet"
       color={colors1.blued}
-      size={55} />
-    <Text style={styles.text}>{humidity}%</Text>
+      size={isWeb() ? 80 : 55} />
+    <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}%</Text>
   </View>;
 
 
