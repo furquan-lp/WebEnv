@@ -23,7 +23,7 @@ const componentStyles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: colors0.mist,
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
@@ -42,10 +42,10 @@ const componentStyles = StyleSheet.create({
     elevation: 2
   },
   buttonOpen: {
-    backgroundColor: "#F194FF",
+    backgroundColor: colors1.blueh,
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
+    backgroundColor: colors1.verdigris,
   },
   textStyle: {
     color: "white",
@@ -54,7 +54,7 @@ const componentStyles = StyleSheet.create({
   },
   modalText: {
     marginBottom: 15,
-    textAlign: "center"
+    textAlign: "justify"
   }
 });
 
