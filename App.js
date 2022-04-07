@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { View, StatusBar, ImageBackground } from 'react-native';
+import { View, StatusBar, ImageBackground, ToastAndroid } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
 import CircularLoading from './components/CircularLoading';
+import ConnectText from './components/ConnectText';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
@@ -51,7 +52,7 @@ const WebEnv = () => {
   useEffect(() => {
     setTimeout(() => {
       envmon
-        .getAll('http://envmon.local/')
+        .getAll('http://192.168.43.127/')
         .then(data => setEnv(data));
     }, 2000);
   }, [env]);
@@ -67,6 +68,7 @@ const WebEnv = () => {
         <TopBar aboutButton={() => setModalVisible(true)} />
         <AboutModal visible={visible} setModalVisible={setModalVisible} />
         <ShowCards env={env} />
+        <ConnectText env={env} />
       </View>
     </ImageBackground>
   );
