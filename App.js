@@ -31,7 +31,18 @@ const style = StyleSheet.create({
   }
 });
 
-
+const ShowCards = ({ env }) => {
+  if (env.length === 0 || env === undefined) {
+    return (
+      <Loading />
+    );
+  } else {
+    return (
+      <Cards temperature={Number(env[0].envdata.temp)}
+        humidity={env[0].envdata.humidity} />
+    );
+  }
+}
 
 const WebEnv = () => {
   const [visible, setModalVisible] = useState(false);
@@ -55,7 +66,7 @@ const WebEnv = () => {
           hidden={false} />
         <TopBar aboutButton={() => setModalVisible(true)} />
         <AboutModal visible={visible} setModalVisible={setModalVisible} />
-        <Cards temperature={33.4} humidity={61} />
+        <ShowCards env={env} />
       </View>
     </ImageBackground>
   );
