@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     fontSize: utils.isWeb() ? 44 : 34,
     fontWeight: 'bold',
     margin: 0,
-    letterSpacing: utils.isWeb() ? 4 : 1
+    letterSpacing: 1
   },
   subtitle: {
     fontSize: utils.isWeb() ? 36 : 30,
@@ -63,7 +63,7 @@ const TempCard = ({ temperature }) => {
           size={utils.isWeb() ? 70 : 50} />
         <Text style={styles.text}>{temperature}&#176;C</Text>
       </View>
-      <Text style={styles.subtitle}>73&#176;F</Text>
+      <Text style={styles.subtitle}>{(temperature * 1.8) + 32}</Text>
     </View>);
 };
 
@@ -72,7 +72,7 @@ const HumidCard = ({ humidity }) =>
     <Icon
       name="droplet"
       color={colors1.blued}
-      size={utils.isWeb() ? 80 : 55} />
+      size={utils.isWeb() ? 55 : 50} />
     <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}%</Text>
   </View>;
 
