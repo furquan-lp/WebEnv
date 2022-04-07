@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1
   },
   subtitle: {
+    color: colors0.bluel,
     fontSize: utils.isWeb() ? 36 : 30,
     alignSelf: 'flex-end',
     margin: 5,
@@ -53,19 +54,17 @@ const Cards = ({ temperature, humidity }) =>
     <TempCard temperature={temperature} /><HumidCard humidity={humidity} />
   </View>;
 
-const TempCard = ({ temperature }) => {
-  return (
-    <View style={styles.card}>
-      <View style={styles.wrapper}>
-        <Icon
-          name="thermometer"
-          color={colors1.blued}
-          size={utils.isWeb() ? 70 : 50} />
-        <Text style={styles.text}>{temperature}&#176;C</Text>
-      </View>
-      <Text style={styles.subtitle}>{(temperature * 1.8) + 32}</Text>
-    </View>);
-};
+const TempCard = ({ temperature }) =>
+  <View style={styles.card}>
+    <View style={styles.wrapper}>
+      <Icon
+        name="thermometer"
+        color={colors1.blued}
+        size={utils.isWeb() ? 70 : 50} />
+      <Text style={styles.text}>{Number(temperature)}&#176;C</Text>
+    </View>
+    <Text style={styles.subtitle}>{(temperature * 1.8) + 32}&#176;F</Text>
+  </View>;
 
 const HumidCard = ({ humidity }) =>
   <View style={[styles.card, styles.wrapper, styles.unjustified]}>
