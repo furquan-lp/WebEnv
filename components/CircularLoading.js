@@ -1,7 +1,7 @@
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { colors0, colors1 } from "./ComponentStyles";
+import { colors1 } from "./ComponentStyles";
 
-const Loading = () =>
+const CircularLoading = () =>
   <View style={[styles.container]}>
     <ActivityIndicator size="large" color={colors1.icej} />
   </View>;
@@ -14,4 +14,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Loading;
+export default CircularLoading;

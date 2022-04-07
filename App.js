@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
-import Loading from './components/Loading';
+import CircularLoading from './components/Loading';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
@@ -34,11 +34,11 @@ const style = StyleSheet.create({
 const ShowCards = ({ env }) => {
   if (env.length === 0 || env === undefined) {
     return (
-      <Loading />
+      <CircularLoading />
     );
   } else {
     return (
-      <Cards temperature={Number(env[0].envdata.temp)}
+      <Cards temperature={env[0].envdata.temp}
         humidity={env[0].envdata.humidity} />
     );
   }
