@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     fontSize: utils.isWeb() ? 44 : 34,
     fontWeight: 'bold',
     margin: 0,
-    letterSpacing: 1
+    letterSpacing: utils.isWeb() ? 4 : 1
   },
   subtitle: {
     fontSize: utils.isWeb() ? 36 : 30,
