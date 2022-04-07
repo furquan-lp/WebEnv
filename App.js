@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
-import CircularLoading from './components/Loading';
+import CircularLoading from './components/CircularLoading';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
