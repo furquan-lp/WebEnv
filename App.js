@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, StatusBar, ImageBackground } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
+import Loading from './components/Loading';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
+import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
 
@@ -29,8 +31,20 @@ const style = StyleSheet.create({
   }
 });
 
+
+
 const WebEnv = () => {
   const [visible, setModalVisible] = useState(false);
+  const [env, setEnv] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      envmon
+        .getAll('http://envmon.local/')
+        .then(data => setEnv(data));
+    }, 2000);
+  }, [env]);
+
   return (
     <ImageBackground source={bgImage}
       style={style.bgImage}>
