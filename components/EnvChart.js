@@ -5,7 +5,6 @@ import { colors0, colors1 } from "./ComponentStyles";
 import utils from '../services/WEUtils';
 
 const manufactureChartData = (chartData) => {
-  console.log(chartData.data);
   return {
     labels: chartData.labels,
     datasets: [
@@ -16,12 +15,12 @@ const manufactureChartData = (chartData) => {
   };
 };
 
-const EnvChart = ({ chartData }) => <View style={{ marginTop: 200, alignItems: 'center' }}>
+const EnvChart = ({ chartData, chartType }) => <View style={{ marginTop: 200, alignItems: 'center' }}>
   <LineChart
     data={manufactureChartData(chartData)}
     width={utils.isWeb() ? 470 : Dimensions.get("window").width - 10} // from react-native
     height={220}
-    yAxisSuffix="*C"
+    yAxisSuffix={chartType == 0 ? '*C' : '%'}
     yAxisInterval={2} // optional, defaults to 1
     chartConfig={{
       backgroundColor: colors0.bluel,
