@@ -67,8 +67,8 @@ const WebEnv = () => {
         newChart.data.shift();
         newChart.labels.shift();
       }
-      newChart.data.push(env[0].envdata.temp);
-      newChart.labels.push(env[0].uptime);
+      newChart.data.push(Number(env[0].envdata.humidity));
+      newChart.labels.push(env[0].uptime.hours + ':' + env[0].uptime.minutes + ':' + env[0].uptime.seconds);
       setChartData(newChart);
     }
   }, [env]);
@@ -84,7 +84,7 @@ const WebEnv = () => {
         <TopBar aboutButton={() => setModalVisible(true)} />
         <AboutModal visible={visible} setModalVisible={setModalVisible} />
         <ShowCards env={env} />
-        <EnvChart chartData={chartData} />
+        <EnvChart chartData={chartData} chartType={1} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
