@@ -14,6 +14,8 @@ import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
 
+import EnvChart from './components/EnvChart';
+
 const style = StyleSheet.create({
   container: {
     flex: 1,
@@ -48,13 +50,27 @@ const ShowCards = ({ env }) => {
 const WebEnv = () => {
   const [visible, setModalVisible] = useState(false);
   const [env, setEnv] = useState([]);
+  const [chartData, setChartData] = useState({ labels: [0], data: [0.0] });
 
   useEffect(() => {
     setTimeout(() => {
       envmon
-        .getAll('http://192.168.43.127/')
+        .getAll('http://envmon.local/')
         .then(data => setEnv(data));
     }, 2000);
+  }, [env]);
+
+  useEffect(() => {
+    if (env.length !== 0 && env !== undefined) {
+      let newChart = { ...chartData };
+      if (chartData.data.length >= 5) {
+        newChart.data.shift();
+        newChart.labels.shift();
+      }
+      newChart.data.push(env[0].envdata.temp);
+      newChart.labels.push(env[0].uptime);
+      setChartData(newChart);
+    }
   }, [env]);
 
   return (
@@ -68,6 +84,7 @@ const WebEnv = () => {
         <TopBar aboutButton={() => setModalVisible(true)} />
         <AboutModal visible={visible} setModalVisible={setModalVisible} />
         <ShowCards env={env} />
+        <EnvChart chartData={chartData} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
