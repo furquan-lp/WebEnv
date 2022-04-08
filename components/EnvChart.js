@@ -20,14 +20,14 @@ const EnvChart = ({ chartData, chartType }) => <View style={{ marginTop: 200, al
     data={manufactureChartData(chartData)}
     width={utils.isWeb() ? 470 : Dimensions.get("window").width - 10} // from react-native
     height={220}
-    yAxisSuffix={chartType == 0 ? '*C' : '%'}
-    yAxisInterval={2} // optional, defaults to 1
+    yAxisSuffix={chartType == 0 ? '°C' : '%'}
+    yAxisInterval={2}
     chartConfig={{
       backgroundColor: colors0.bluel,
       backgroundGradientFrom: colors0.bluel,
       backgroundGradientTo: colors1.blued,
       backgroundGradientToOpacity: 0.5,
-      decimalPlaces: 2, // optional, defaults to 2dp
+      decimalPlaces: 1, // optional, defaults to 2dp
       color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
       labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
       style: {
