@@ -50,7 +50,7 @@ const ShowCards = ({ env }) => {
 const WebEnv = () => {
   const [visible, setModalVisible] = useState(false);
   const [env, setEnv] = useState([]);
-  const [chartData, setChartData] = useState({ labels: [0], data: [0.0] });
+  const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
 
   useEffect(() => {
     setTimeout(() => {
@@ -62,7 +62,7 @@ const WebEnv = () => {
 
   useEffect(() => {
     if (env.length !== 0 && env !== undefined) {
-      let newChart = { ...chartData };
+      let newChart = chartData.labels[0] === -1 ? { labels: [], data: [] } : { ...chartData };
       if (chartData.data.length >= 5) {
         newChart.data.shift();
         newChart.labels.shift();
