@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     padding: 5,
+    marginTop: 0
   },
   card: {
     flex: 1,
@@ -63,7 +64,7 @@ const TempCard = ({ temperature }) =>
         size={utils.isWeb() ? 70 : 50} />
       <Text style={styles.text}>{Number(temperature)}&#176;C</Text>
     </View>
-    <Text style={styles.subtitle}>{(temperature * 1.8) + 32}&#176;F</Text>
+    <Text style={styles.subtitle}>{((temperature * 1.8) + 32).toFixed(2)}&#176;F</Text>
   </View>;
 
 const HumidCard = ({ humidity }) =>
