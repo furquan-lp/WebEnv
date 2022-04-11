@@ -27,6 +27,9 @@ const styles = StyleSheet.create({
   },
   pressed: {
     backgroundColor: colors1.icej
+  },
+  active: {
+    backgroundColor: colors0.purplec
   }
 });
 
@@ -36,11 +39,15 @@ const ChartToggle = ({ chartType, setChartType }) => {
   }
   return <View style={styles.container}>
     <Pressable onPress={handleToggle} disabled={chartType === 0}
-      style={[styles.button, chartType === 0 ? styles.pressed : styles.nonPressed]}>
+      style={({ pressed }) => [
+        styles.button, chartType === 0 ? styles.pressed : styles.nonPressed,
+        pressed ? styles.active : null]}>
       <Text style={styles.buttonText}>Temperature</Text>
     </Pressable>
     <Pressable onPress={handleToggle} disabled={chartType !== 0}
-      style={[styles.button, chartType !== 0 ? styles.pressed : styles.nonPressed]} >
+      style={({ pressed }) => [
+        styles.button, chartType !== 0 ? styles.pressed : styles.nonPressed,
+        pressed ? styles.active : null]} >
       <Text style={styles.buttonText}>Humidity</Text>
     </Pressable>
   </View >;
