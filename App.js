@@ -68,12 +68,17 @@ const WebEnv = () => {
         newChart.data.shift();
         newChart.labels.shift();
       }
-      newChart.data.push(Number(env[0].envdata.temp));
+      newChart.data.push(Number(chartType === 0 ? env[0].envdata.temp : env[0].envdata.humidity));
       newChart.labels.push(
         env[0].uptime.hours + ':' + env[0].uptime.minutes + ':' + env[0].uptime.seconds);
       setChartData(newChart);
     }
   }, [env]);
+
+  useEffect(() => {
+    const blankChart = { labels: [], data: [] };
+    setChartData(blankChart);
+  }, [chartType]);
 
   return (
     <ImageBackground source={bgImage}
