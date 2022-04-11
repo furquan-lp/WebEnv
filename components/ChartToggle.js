@@ -4,7 +4,6 @@ import { colors0, colors1 } from './ComponentStyles';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     padding: 10,
     justifyContent: 'center'
@@ -16,6 +15,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   button: {
+    flex: 1,
     margin: 2,
     padding: 5,
     alignItems: 'center',
