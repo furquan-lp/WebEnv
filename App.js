@@ -7,14 +7,13 @@ import AboutModal from './components/AboutModal';
 import Cards from './components/Cards';
 import CircularLoading from './components/CircularLoading';
 import ConnectText from './components/ConnectText';
+import EnvChart from './components/EnvChart';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
 import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
-
-import EnvChart from './components/EnvChart';
 
 const style = StyleSheet.create({
   container: {
@@ -49,6 +48,7 @@ const ShowCards = ({ env }) => {
 
 const WebEnv = () => {
   const [visible, setModalVisible] = useState(false);
+  const [chartType, setChartType] = useState(0);
   const [env, setEnv] = useState([]);
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
 
@@ -67,8 +67,9 @@ const WebEnv = () => {
         newChart.data.shift();
         newChart.labels.shift();
       }
-      newChart.data.push(Number(env[0].envdata.humidity));
-      newChart.labels.push(env[0].uptime.hours + ':' + env[0].uptime.minutes + ':' + env[0].uptime.seconds);
+      newChart.data.push(Number(env[0].envdata.temp));
+      newChart.labels.push(
+        env[0].uptime.hours + ':' + env[0].uptime.minutes + ':' + env[0].uptime.seconds);
       setChartData(newChart);
     }
   }, [env]);
@@ -84,7 +85,7 @@ const WebEnv = () => {
         <TopBar aboutButton={() => setModalVisible(true)} />
         <AboutModal visible={visible} setModalVisible={setModalVisible} />
         <ShowCards env={env} />
-        <EnvChart chartData={chartData} chartType={1} />
+        <EnvChart chartData={chartData} chartType={chartType} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
