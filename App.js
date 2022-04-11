@@ -8,6 +8,7 @@ import Cards from './components/Cards';
 import CircularLoading from './components/CircularLoading';
 import ConnectText from './components/ConnectText';
 import EnvChart from './components/EnvChart';
+import ChartToggle from './components/ChartToggle';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
@@ -86,6 +87,7 @@ const WebEnv = () => {
         <AboutModal visible={visible} setModalVisible={setModalVisible} />
         <ShowCards env={env} />
         <EnvChart chartData={chartData} chartType={chartType} />
+        <ChartToggle chartType={chartType} setChartType={setChartType} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
