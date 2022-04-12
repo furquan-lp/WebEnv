@@ -8,8 +8,8 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    margin: 10,
-    padding: 5
+    margin: 5,
+    marginTop: 0,
   },
   text: {
     color: colors0.mist,
