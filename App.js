@@ -93,7 +93,10 @@ const WebEnv = () => {
         <EnvChart chartData={chartData} chartType={chartType} />
         <ChartToggle chartType={chartType} setChartType={setChartType} />
         <URLField URL={URL} setURL={setURL} />
-        {visible ? <AboutModal visible={visible} setModalVisible={setModalVisible} /> : null}
+        {visible ?
+          <AboutModal visible={visible} setModalVisible={setModalVisible} envBackend={env[0].backend} />
+          : null
+        }
         <ConnectText env={env} />
       </View>
     </ImageBackground>
