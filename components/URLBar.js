@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { View, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
-import { colors1 } from "./ComponentStyles";
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { colors0, colors1 } from "./ComponentStyles";
 
 const styles = StyleSheet.create({
   URLArea: {
@@ -29,6 +30,12 @@ const URLField = ({ URL, setURL }) => {
         value={text}
         style={styles.URLInput}
         onSubmitEditing={() => setURL(text)}
+      />
+      <Icon.Button
+        name="check"
+        backgroundColor={colors1.verdigris}
+        borderRadius={4}
+        size={26}
       />
     </View>);
 };
