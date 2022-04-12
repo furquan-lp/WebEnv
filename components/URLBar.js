@@ -36,6 +36,7 @@ const URLField = ({ URL, setURL }) => {
         backgroundColor={colors1.verdigris}
         borderRadius={4}
         size={26}
+        onPress={() => setURL(text)}
       />
     </View>);
 };
