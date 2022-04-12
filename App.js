@@ -61,7 +61,8 @@ const WebEnv = () => {
   }, [env]);
 
   useEffect(() => {
-    if (env.length !== 0 && env !== undefined) {
+    if (env.length !== 0 && env !== undefined
+      && !(isNaN(env[0].envdata.temp) || isNaN(env[0].envdata.humidity))) {
       let newChart = chartData.labels[0] === -1 ? { labels: [], data: [] } : { ...chartData };
       if (chartData.data.length >= 5) {
         newChart.data.shift();
