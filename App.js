@@ -9,20 +9,17 @@ import CircularLoading from './components/CircularLoading';
 import ConnectText from './components/ConnectText';
 import EnvChart from './components/EnvChart';
 import ChartToggle from './components/ChartToggle';
+import URLField from './components/URLBar';
 import { colors0, colors1 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
 import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
-import URLField from './components/URLBar';
 
 const style = StyleSheet.create({
   container: {
-    flex: 1,
-    //backgroundColor: colors1.verdigris,
-    alignItems: 'stretch',
-    //display: 'block'
+    flex: 1
   },
   webWrapper: {
     flex: 1,
@@ -58,7 +55,7 @@ const WebEnv = () => {
   useEffect(() => {
     setTimeout(() => {
       envmon
-        .getAll('http://envmon.local/')
+        .getAll('http://192.168.43.126/')
         .then(data => setEnv(data));
     }, 2000);
   }, [env]);
@@ -91,7 +88,7 @@ const WebEnv = () => {
           backgroundColor={colors0.blued}
           hidden={false} />
         <TopBar aboutButton={() => setModalVisible(true)} />
-        <AboutModal visible={visible} setModalVisible={setModalVisible} />
+        {visible ? <AboutModal visible={visible} setModalVisible={setModalVisible} /> : null}
         <ShowCards env={env} />
         <EnvChart chartData={chartData} chartType={chartType} />
         <ChartToggle chartType={chartType} setChartType={setChartType} />
