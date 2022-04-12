@@ -95,7 +95,7 @@ const WebEnv = () => {
         <ShowCards env={env} />
         <EnvChart chartData={chartData} chartType={chartType} />
         <ChartToggle chartType={chartType} setChartType={setChartType} />
-        <URLField text={URL} onChangeText={setURL} />
+        <URLField URL={URL} setURL={setURL} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
