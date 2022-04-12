@@ -5,8 +5,9 @@ import { colors0, colors1 } from './ComponentStyles';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 10,
-    justifyContent: 'center'
+    padding: 5,
+    justifyContent: 'center',
+    marginBottom: 10
   },
   buttonText: {
     color: 'white',
