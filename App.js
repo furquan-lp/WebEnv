@@ -15,6 +15,7 @@ import utils from './services/WEUtils';
 import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
+import URLField from './components/URLBar';
 
 const style = StyleSheet.create({
   container: {
@@ -52,6 +53,7 @@ const WebEnv = () => {
   const [chartType, setChartType] = useState(0);
   const [env, setEnv] = useState([]);
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
+  const [URL, setURL] = useState('http://envmon.local/');
 
   useEffect(() => {
     setTimeout(() => {
@@ -93,6 +95,7 @@ const WebEnv = () => {
         <ShowCards env={env} />
         <EnvChart chartData={chartData} chartType={chartType} />
         <ChartToggle chartType={chartType} setChartType={setChartType} />
+        <URLField text={URL} onChangeText={setURL} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
