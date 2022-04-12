@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     padding: 5,
-    marginTop: 0
+    marginVertical: 10
   },
   card: {
     flex: 1,
