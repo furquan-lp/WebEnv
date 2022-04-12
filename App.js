@@ -50,7 +50,7 @@ const WebEnv = () => {
   const [chartType, setChartType] = useState(0);
   const [env, setEnv] = useState([]);
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
-  const [URL, setURL] = useState('http://envmon.local/');
+  const [URL, setURL] = useState('http://192.168.43.126/');
 
   useEffect(() => {
     setTimeout(() => {
@@ -93,11 +93,8 @@ const WebEnv = () => {
         <EnvChart chartData={chartData} chartType={chartType} />
         <ChartToggle chartType={chartType} setChartType={setChartType} />
         <URLField URL={URL} setURL={setURL} />
-        {visible ?
-          <AboutModal visible={visible} setModalVisible={setModalVisible}
-            envBackend={env[0] !== undefined ? env[0].backend : { name: 'unknown', version: 'unknown' }} />
-          : null
-        }
+        <AboutModal visible={visible} setModalVisible={setModalVisible}
+          envBackend={env[0] !== undefined ? env[0].backend : { name: 'unknown', version: 'unknown' }} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
