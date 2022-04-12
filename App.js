@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, StatusBar, ImageBackground, ToastAndroid } from 'react-native';
+import { View, StatusBar, ImageBackground } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 import TopBar from './components/TopBar';
@@ -50,15 +50,15 @@ const WebEnv = () => {
   const [chartType, setChartType] = useState(0);
   const [env, setEnv] = useState([]);
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
-  const [URL, setURL] = useState('http://envmon.local/');
+  const [URL, setURL] = useState('http://192.168.43.126/');
 
   useEffect(() => {
     setTimeout(() => {
       envmon
-        .getAll('http://192.168.43.126/')
+        .getAll(URL)
         .then(data => setEnv(data));
     }, 2000);
-  }, [env]);
+  }, [URL, env]);
 
   useEffect(() => {
     if (env.length !== 0 && env !== undefined
