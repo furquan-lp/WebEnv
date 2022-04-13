@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-const appVer = '0.8.5-beta';
+const appVer = '0.9.0-alpha.ngrok';
 const repoURL = 'https://github.com/furquan-lp/WebEnv';
 
 const isWeb = () => {
