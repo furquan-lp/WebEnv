@@ -1,5 +1,6 @@
 {
-  "name": "WebEnv",
+  "name": "webenv",
+  "homepage": "https://furquan-lp.github.io/WebEnv/",
   "version": "0.9.0-alpha",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
