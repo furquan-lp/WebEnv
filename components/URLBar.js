@@ -44,6 +44,7 @@ const URLField = ({ URL, setURL }) => {
         value={text}
         style={styles.URLInput}
         onSubmitEditing={() => setURL(text)}
+        editable={false}
       />
       <Pressable onPress={() => setURL(text)}
         style={({ pressed }) => [
