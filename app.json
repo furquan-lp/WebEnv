@@ -2,7 +2,7 @@
   "expo": {
     "name": "WebEnv",
     "slug": "WebEnv",
-    "version": "1.0.0",
+    "version": "0.9.0-alpha",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
