@@ -1,24 +1,24 @@
 {
   "files": {
-    "app.js": "/WebEnv/static/js/app.fe9f8eb9.chunk.js",
-    "app.js.map": "/WebEnv/static/js/app.fe9f8eb9.chunk.js.map",
-    "runtime~app.js": "/WebEnv/static/js/runtime~app.649a1b1a.js",
-    "runtime~app.js.map": "/WebEnv/static/js/runtime~app.649a1b1a.js.map",
-    "static/js/2.51769c19.chunk.js": "/WebEnv/static/js/2.51769c19.chunk.js",
-    "static/js/2.51769c19.chunk.js.map": "/WebEnv/static/js/2.51769c19.chunk.js.map",
-    "fonts/Feather.ttf": "/WebEnv/./fonts/Feather.ttf",
-    "fonts/FontAwesome.ttf": "/WebEnv/./fonts/FontAwesome.ttf",
-    "favicon-16.png": "/WebEnv/favicon-16.png",
-    "favicon-32.png": "/WebEnv/favicon-32.png",
-    "favicon.ico": "/WebEnv/favicon.ico",
-    "index.html": "/WebEnv/index.html",
-    "manifest.json": "/WebEnv/manifest.json",
-    "serve.json": "/WebEnv/serve.json",
-    "static/js/2.51769c19.chunk.js.LICENSE.txt": "/WebEnv/static/js/2.51769c19.chunk.js.LICENSE.txt",
-    "static/media/background.jpg": "/WebEnv/static/media/background.91a3a11a.jpg"
+    "app.js": "simpledev.site/static/js/app.fe9f8eb9.chunk.js",
+    "app.js.map": "simpledev.site/static/js/app.fe9f8eb9.chunk.js.map",
+    "runtime~app.js": "simpledev.site/static/js/runtime~app.2a1552a5.js",
+    "runtime~app.js.map": "simpledev.site/static/js/runtime~app.2a1552a5.js.map",
+    "static/js/2.51769c19.chunk.js": "simpledev.site/static/js/2.51769c19.chunk.js",
+    "static/js/2.51769c19.chunk.js.map": "simpledev.site/static/js/2.51769c19.chunk.js.map",
+    "fonts/Feather.ttf": "simpledev.site/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "simpledev.site/./fonts/FontAwesome.ttf",
+    "favicon-16.png": "simpledev.site/favicon-16.png",
+    "favicon-32.png": "simpledev.site/favicon-32.png",
+    "favicon.ico": "simpledev.site/favicon.ico",
+    "index.html": "simpledev.site/index.html",
+    "manifest.json": "simpledev.site/manifest.json",
+    "serve.json": "simpledev.site/serve.json",
+    "static/js/2.51769c19.chunk.js.LICENSE.txt": "simpledev.site/static/js/2.51769c19.chunk.js.LICENSE.txt",
+    "static/media/background.jpg": "simpledev.site/static/media/background.91a3a11a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime~app.649a1b1a.js",
+    "static/js/runtime~app.2a1552a5.js",
     "static/js/2.51769c19.chunk.js",
     "static/js/app.fe9f8eb9.chunk.js"
   ]
