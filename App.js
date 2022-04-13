@@ -50,7 +50,7 @@ const WebEnv = () => {
   const [chartType, setChartType] = useState(0);
   const [env, setEnv] = useState([]);
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
-  const [URL, setURL] = useState('http://192.168.43.126/');
+  const [URL, setURL] = useState('http://4.tcp.ngrok.io:17126');
 
   useEffect(() => {
     setTimeout(() => {
