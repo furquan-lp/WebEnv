@@ -1,17 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Linking, Pressable } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { Righteous_400Regular } from '@expo-google-fonts/righteous';
 import { colors0, colors1 } from './ComponentStyles';
+import utils from '../services/WEUtils';
 
 const styles = StyleSheet.create({
   container: {
     height: 48,
     alignSelf: 'stretch',
-    flexDirection: 'row', // row
+    flexDirection: 'row',
     backgroundColor: colors0.bluel,
     alignItems: 'center',
-    justifyContent: 'space-between', // center, space-around
+    justifyContent: 'space-between',
     paddingLeft: 10,
     paddingRight: 10
   },
@@ -39,11 +40,13 @@ const TopBar = ({ aboutButton }) => {
   else
     return (
       <View style={styles.container}>
-        <Icon
-          name="thermometer"
-          color={colors1.icej}
-          size={26}
-        />
+        <Pressable onPress={() => Linking.openURL(utils.getRepoURL())}>
+          <Icon
+            name="thermometer"
+            color={colors1.icej}
+            size={26}
+          />
+        </Pressable>
         <Text style={styles.title}>WebEnv</Text>
         <AboutButton onPress={aboutButton} />
       </View>
