@@ -10,7 +10,7 @@ const init = (setURL) => {
     { 'X-Master-Key': '$2b$10$pWNGBg9x/gcFna2bGzV2DO.97lv6XCoK35tPfs4e.HlgJAdpZ8aC.' }
   ).then(webenvData => {
     appVer = webenvData.record.version;
-    repoURL = webenvData.repositoryURL;
+    repoURL = webenvData.record.repositoryURL;
     setURL(webenvData.record.backendURL);
   });
 }
