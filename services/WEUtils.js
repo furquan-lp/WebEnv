@@ -11,9 +11,7 @@ const init = (setURL, URL) => {
   ).then(webenvData => {
     appVer = webenvData.record.version;
     repoURL = webenvData.repositoryURL;
-    const ngrokURL = webenvData.record.backendURL;
-    if (ngrokURL !== URL)
-      setURL(webenvData.record.backendURL);
+    setURL(webenvData.record.backendURL);
   });
 }
 
