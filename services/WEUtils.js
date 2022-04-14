@@ -4,7 +4,7 @@ import envmon from './envmon';
 let appVer = '0.9.3-beta.ngrok';
 let repoURL = 'https://github.com/furquan-lp/WebEnv';
 
-const init = (setURL, URL) => {
+const init = (setURL) => {
   envmon.getAll(
     'https://api.jsonbin.io/v3/b/6257c74280883c3054e15f27/latest',
     { 'X-Master-Key': '$2b$10$pWNGBg9x/gcFna2bGzV2DO.97lv6XCoK35tPfs4e.HlgJAdpZ8aC.' }
