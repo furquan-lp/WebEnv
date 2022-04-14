@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
 
 const URLField = ({ URL, setURL }) => {
   const [text, setText] = useState(URL);
+  if (text !== URL)
+    setText(URL);
   return (
     <View style={styles.URLArea}>
       <TextInput onChange={(e) => setText(e.target.value)}
