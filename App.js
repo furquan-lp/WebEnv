@@ -50,7 +50,9 @@ const WebEnv = () => {
   const [chartType, setChartType] = useState(0);
   const [env, setEnv] = useState([]);
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
-  const [URL, setURL] = useState('http://4.tcp.ngrok.io:17126');
+  const [URL, setURL] = useState('http://envmon.local:8888/');
+
+  useEffect(() => { utils.init(setURL) }, [])
 
   useEffect(() => {
     setTimeout(() => {
@@ -58,7 +60,11 @@ const WebEnv = () => {
         .getAll(URL)
         .then(data => setEnv(data));
     }, 2000);
-  }, [URL, env]);
+  }, [env]);
+
+  useEffect(() => {
+    setEnv([]);
+  }, [URL]);
 
   useEffect(() => {
     if (env.length !== 0 && env !== undefined
