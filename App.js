@@ -108,7 +108,7 @@ const WebEnv = () => {
 };
 
 const App = () => {
-  if (utils.isWeb()) {
+  if (utils.isWeb() && !utils.isPortrait()) {
     return (
       <ImageBackground source={bgImage}
         style={style.bgImage}
