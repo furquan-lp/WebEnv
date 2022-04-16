@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Platform, Dimensions } from 'react-native';
 import envmon from './envmon';
 
 let appVer = '0.9.3-beta.ngrok';
@@ -19,6 +19,10 @@ const isWeb = () => {
   return (Platform.OS === 'web');
 };
 
+const isPortrait = () => {
+  return Dimensions.get('window').height > Dimensions.get('window').width;
+};
+
 const getOS = () => {
   return Platform.OS;
 };
@@ -31,4 +35,4 @@ const getRepoURL = () => {
   return repoURL;
 }
 
-export default { init, isWeb, getOS, getAppVersion, getRepoURL };
+export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL };
