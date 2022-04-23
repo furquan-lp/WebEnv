@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { View, StatusBar, ImageBackground } from 'react-native';
-import { StyleSheet } from 'react-native';
 
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
@@ -10,27 +9,12 @@ import ConnectText from './components/ConnectText';
 import EnvChart from './components/EnvChart';
 import ChartToggle from './components/ChartToggle';
 import URLField from './components/URLBar';
-import { colors0 } from './components/ComponentStyles';
+import { colors0, componentStyles } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
 import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
-
-const style = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  webWrapper: {
-    flex: 1,
-    height: 720,
-    width: 480,
-    alignSelf: 'center'
-  },
-  bgImage: {
-    flex: 1
-  }
-});
 
 const ShowCards = ({ env }) => {
   if (env.length === 0 || env === undefined) {
@@ -52,7 +36,7 @@ const WebEnv = () => {
   const [chartData, setChartData] = useState({ labels: [-1], data: [0.0] });
   const [URL, setURL] = useState('http://envmon.local:8888/');
 
-  useEffect(() => { utils.init(setURL) }, [])
+  useEffect(() => { utils.init(setURL) }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -88,8 +72,8 @@ const WebEnv = () => {
 
   return (
     <ImageBackground source={bgImage}
-      style={style.bgImage}>
-      <View style={style.container}>
+      style={componentStyles.bgImage}>
+      <View style={componentStyles.appContainer}>
         <StatusBar
           animated={true}
           backgroundColor={colors0.blued}
@@ -111,9 +95,9 @@ const App = () => {
   if (utils.isWeb() && !utils.isPortrait()) {
     return (
       <ImageBackground source={bgImage}
-        style={style.bgImage}
+        style={componentStyles.bgImage}
         blurRadius={10}>
-        <View style={style.webWrapper}>
+        <View style={componentStyles.webWrapper}>
           <WebEnv />
         </View>
       </ImageBackground >
