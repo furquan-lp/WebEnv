@@ -10,7 +10,7 @@ import ConnectText from './components/ConnectText';
 import EnvChart from './components/EnvChart';
 import ChartToggle from './components/ChartToggle';
 import URLField from './components/URLBar';
-import { colors0, colors1 } from './components/ComponentStyles';
+import { colors0 } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
 import envmon from './services/envmon';
