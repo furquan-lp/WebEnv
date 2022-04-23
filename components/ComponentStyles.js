@@ -15,6 +15,18 @@ const colors1 = {
 }
 
 const componentStyles = StyleSheet.create({
+  appContainer: {
+    flex: 1
+  },
+  webWrapper: {
+    flex: 1,
+    height: 720,
+    width: 480,
+    alignSelf: 'center'
+  },
+  bgImage: {
+    flex: 1
+  },
   centeredView: {
     flex: 1,
     justifyContent: 'center',
