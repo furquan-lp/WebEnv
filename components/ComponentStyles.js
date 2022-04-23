@@ -17,8 +17,8 @@ const colors1 = {
 const componentStyles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 22
   },
   modalView: {
@@ -26,8 +26,8 @@ const componentStyles = StyleSheet.create({
     backgroundColor: colors0.mist,
     borderRadius: 20,
     padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
+    alignItems: 'center',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2
@@ -48,13 +48,13 @@ const componentStyles = StyleSheet.create({
     backgroundColor: colors1.verdigris,
   },
   textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
   modalText: {
     marginBottom: 15,
-    textAlign: "justify"
+    textAlign: 'justify'
   }
 });
 

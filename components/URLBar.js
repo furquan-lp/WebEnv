@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { View, TextInput, Pressable } from "react-native";
-import { StyleSheet } from "react-native";
+import { View, TextInput, Pressable } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { colors0, colors1 } from "./ComponentStyles";
+import { colors0, colors1 } from './ComponentStyles';
 
 const styles = StyleSheet.create({
   URLArea: {

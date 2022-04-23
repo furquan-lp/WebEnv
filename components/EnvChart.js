@@ -1,7 +1,7 @@
-import { View, Dimensions } from "react-native";
-import { LineChart } from "react-native-chart-kit";
+import { View, Dimensions } from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
 
-import { colors0, colors1 } from "./ComponentStyles";
+import { colors0, colors1 } from './ComponentStyles';
 import utils from '../services/WEUtils';
 
 const manufactureChartData = (chartData) => {

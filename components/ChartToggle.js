@@ -1,5 +1,5 @@
-import { View, Pressable, Text } from "react-native";
-import { StyleSheet } from "react-native";
+import { View, Pressable, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors0, colors1 } from './ComponentStyles';
 
 const styles = StyleSheet.create({

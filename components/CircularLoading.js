@@ -1,5 +1,5 @@
-import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { colors1 } from "./ComponentStyles";
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { colors1 } from './ComponentStyles';
 
 const CircularLoading = () =>
   <View style={styles.container}>
