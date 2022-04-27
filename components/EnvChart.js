@@ -20,7 +20,7 @@ const EnvChart = ({ chartData, chartType }) =>
     <LineChart
       data={manufactureChartData(chartData)}
       width={utils.isWeb() && !utils.isPortrait() ?
-        470 : Dimensions.get("window").width - 20} // from react-native
+        470 : Dimensions.get("window").width - 10} // from react-native
       height={220}
       yAxisSuffix={chartType == 0 ? '°C' : '%'}
       yAxisInterval={2}
