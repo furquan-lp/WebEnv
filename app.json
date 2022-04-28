@@ -2,7 +2,7 @@
   "expo": {
     "name": "WebEnv",
     "slug": "WebEnv",
-    "version": "0.9.0-alpha",
+    "version": "0.9.5-beta.ngrok",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
