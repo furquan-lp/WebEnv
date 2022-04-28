@@ -1,7 +1,7 @@
 import { Platform, Dimensions } from 'react-native';
 import envmon from './envmon';
 
-let appVer = '0.9.4-beta.ngrok';
+let appVer = '0.9.5-beta.ngrok';
 let repoURL = 'https://github.com/furquan-lp/WebEnv';
 
 const init = (setURL) => {
