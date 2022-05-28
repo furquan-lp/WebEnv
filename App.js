@@ -17,7 +17,7 @@ import envmon from './services/envmon';
 import bgImage from './assets/background.jpg';
 
 const ShowCards = ({ env }) => {
-  if (env.length === 0 || env === undefined) {
+  if (env === undefined || env.length === 0) {
     return (
       <CircularLoading />
     );
@@ -51,7 +51,7 @@ const WebEnv = () => {
   }, [URL]);
 
   useEffect(() => {
-    if (env.length !== 0 && env !== undefined
+    if (env !== undefined && env.length !== 0
       && !(isNaN(env[0].envdata.temp) || isNaN(env[0].envdata.humidity))) {
       let newChart = chartData.labels[0] === -1 ? { labels: [], data: [] } : { ...chartData };
       if (chartData.data.length >= 5) {
