@@ -19,7 +19,7 @@ const style = StyleSheet.create({
 });
 
 const ConnectText = ({ env }) => {
-  if (env.length === 0 || env === undefined) {
+  if (env === undefined || env.length === 0) {
     return (
       <Text style={[style.container, style.text]}>Connecting...</Text>
     );
