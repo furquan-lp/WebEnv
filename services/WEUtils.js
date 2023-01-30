@@ -1,8 +1,7 @@
 import { Platform, Dimensions } from 'react-native';
 import envmon from './envmon';
 
-let appVer = '0.9.5-beta.ngrok';
-let repoURL = 'https://github.com/furquan-lp/WebEnv';
+import { version, repository } from '../package.json';
 
 const init = (setURL) => {
   envmon.getAll(
@@ -28,11 +27,11 @@ const getOS = () => {
 };
 
 const getAppVersion = () => {
-  return appVer;
+  return version;
 };
 
 const getRepoURL = () => {
-  return repoURL;
+  return repository.url;
 }
 
 export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL };
