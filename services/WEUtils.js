@@ -3,10 +3,11 @@ import envmon from './envmon';
 
 import { version, homepage, repository } from '../package.json';
 
+let backendRepo = "unavailable";
+
 const init = (setURL) => {
   envmon.getAll(`${homepage}data/webenv.json`,).then(webenvData => {
-    appVer = webenvData.record.version;
-    repoURL = webenvData.record.repositoryURL;
+    backendRepo = webenvData.record.backendRepo;
     setURL(webenvData.record.backendURL);
   });
 }
