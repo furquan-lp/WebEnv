@@ -2,6 +2,10 @@
   "name": "webenv",
   "homepage": "https://webenv.simpledev.site/",
   "version": "0.9.5-beta.ngrok",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/furquan-lp/WebEnv.git"
+  },
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
