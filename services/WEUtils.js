@@ -7,8 +7,8 @@ let backendRepo = "unavailable";
 
 const init = (setURL) => {
   envmon.getAll(`${homepage}data/webenv.json`,).then(webenvData => {
-    backendRepo = webenvData.record.backendRepo;
-    setURL(webenvData.record.backendURL);
+    backendRepo = webenvData.backendRepo;
+    setURL(webenvData.backendURL);
   });
 }
 
