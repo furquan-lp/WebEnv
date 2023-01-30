@@ -1,5 +1,5 @@
 {
   "version": "0.9.5-beta.ngrok",
-  "repositoryURL": "https://github.com/furquan-lp/WebEnv",
-  "backendURL": "http://4.tcp.ngrok.io:17657"
+  "backendURL": "https://envmon.simpledev.site/",
+  "backendRepo": "https://github.com/furquan-lp/envmon-minimal"
 }
