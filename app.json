@@ -2,7 +2,7 @@
   "expo": {
     "name": "WebEnv",
     "slug": "WebEnv",
-    "version": "0.9.7-alpha.cloudflare",
+    "version": "0.9.8-alpha.cloudflare",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
