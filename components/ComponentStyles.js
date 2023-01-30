@@ -67,7 +67,14 @@ const componentStyles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'justify'
-  }
+  },
+  URLBarTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginHorizontal: 5,
+    marginTop: 10,
+    color: 'white'
+  },
 });
 
 export { colors0, colors1, componentStyles };
