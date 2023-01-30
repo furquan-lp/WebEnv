@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, StatusBar, ImageBackground } from 'react-native';
+import { Text, View, StatusBar, ImageBackground } from 'react-native';
 
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
@@ -82,6 +82,7 @@ const WebEnv = () => {
         <ShowCards env={env} />
         <EnvChart chartData={chartData} chartType={chartType} />
         <ChartToggle chartType={chartType} setChartType={setChartType} />
+        <Text style={componentStyles.URLBarTitle}>Backend URL:</Text>
         <URLField URL={URL} setURL={setURL} />
         <AboutModal visible={visible} setModalVisible={setModalVisible}
           envBackend={env[0] !== undefined ? env[0].backend : { name: 'unknown', version: 'unknown' }} />
