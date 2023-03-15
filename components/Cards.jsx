@@ -28,7 +28,10 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   wrapper: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   unjustified: {
     justifyContent: 'flex-start'
@@ -68,12 +71,15 @@ const TempCard = ({ temperature }) =>
   </View>;
 
 const HumidCard = ({ humidity }) =>
-  <View style={[styles.card, styles.wrapper, styles.unjustified]}>
-    <Icon
-      name="droplet"
-      color={colors1.blued}
-      size={utils.isWeb() ? 55 : 50} />
-    <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}%</Text>
+  <View style={styles.card}>
+    <View style={styles.wrapper}>
+      <Icon
+        name="droplet"
+        color={colors1.blued}
+        size={utils.isWeb() ? 55 : 50} />
+      <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}</Text>
+    </View>
+    <Text style={styles.text}>%</Text>
   </View>;
 
 
