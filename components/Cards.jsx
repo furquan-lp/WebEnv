@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    backgroundColor: 'rgba(231, 234, 246, 0.5)', // colors0.mist
+    backgroundColor: utils.isWeb() ? 'rgba(231, 234, 246, 0.5)' : colors0.mist, // colors0.mist
     borderRadius: 10,
     height: 150,
     alignItems: 'center',
@@ -22,10 +22,11 @@ const styles = StyleSheet.create({
     shadowColor: colors1.blued,
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 3,
     },
-    shadowOpacity: 1,
-    shadowRadius: 4,
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6
   },
   wrapper: {
     flexDirection: 'row',
