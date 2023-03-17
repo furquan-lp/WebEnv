@@ -24,7 +24,7 @@ const ShowCards = ({ env }) => {
   } else if (!Array.isArray(env)) {
     return (
       <View style={[componentStyles.appContainer, { margin: 20 }]}>
-        <Text style={[componentStyles.textStyle, { fontSize: 24, color: colors0.blued, margin: 4 }]}>
+        <Text style={{ fontWeight: 'bold', textAlign: 'center', fontSize: 24, color: colors0.blued, margin: 4 }}>
           A backend error has occurred.
         </Text>
         <Text style={{ fontSize: 20, fontFamily: 'monospace' }}>{`${env.name}: ${env.message}`}</Text>
