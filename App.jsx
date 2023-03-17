@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Text, View, StatusBar, ImageBackground } from 'react-native';
+import { Text, View, ScrollView, StatusBar, ImageBackground, SafeAreaView } from 'react-native';
 import axios from 'axios';
 
 import TopBar from './components/TopBar';
@@ -27,7 +27,13 @@ const ShowCards = ({ env }) => {
         <Text style={[componentStyles.textStyle, { fontSize: 24, color: colors0.blued, margin: 4 }]}>
           A backend error has occurred.
         </Text>
-        <Text style={{ fontSize: 20, fontFamily: 'monospace' }}>{`${env.name}:${env.message}`}</Text>
+        <Text style={{ fontSize: 20, fontFamily: 'monospace' }}>{`${env.name}: ${env.message}`}</Text>
+        <SafeAreaView style={{ marginTop: 4, }}>
+          <ScrollView style={{ height: 100, paddingVertical: 1 }}>
+            <Text style={{ fontFamily: 'monospace' }}>
+              {env.stack}
+            </Text>
+          </ScrollView></SafeAreaView>
       </View>
     );
   }
@@ -52,7 +58,7 @@ const WebEnv = () => {
     setTimeout(() => {
       axios.get(URL)
         .then(response => setEnv(response.data))
-        .catch(e => setEnv({ name: e.name, message: e.message }));
+        .catch(e => setEnv({ name: e.name, message: e.message, stack: e.stack }));
     }, 2000);
   }, [env]);
 
