@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Text, View, StatusBar, ImageBackground } from 'react-native';
+import axios from 'axios';
 
 import TopBar from './components/TopBar';
 import AboutModal from './components/AboutModal';
@@ -12,12 +13,11 @@ import URLField from './components/URLBar';
 import { colors0, componentStyles } from './components/ComponentStyles';
 
 import utils from './services/WEUtils';
-import envmon from './services/envmon';
 
 import bgImage from './assets/background.jpg';
 
 const ShowCards = ({ env }) => {
-  if (env === undefined || env.length === 0) {
+  if (!Array.isArray(env) || env === undefined || env.length === 0) {
     return (
       <CircularLoading />
     );
@@ -40,9 +40,9 @@ const WebEnv = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      envmon
-        .getAll(URL)
-        .then(data => setEnv(data));
+      axios.get(URL)
+        .then(response => setEnv(response.data))
+        .catch(e => setEnv('error'));
     }, 2000);
   }, [env]);
 
@@ -51,7 +51,7 @@ const WebEnv = () => {
   }, [URL]);
 
   useEffect(() => {
-    if (env !== undefined && env.length !== 0
+    if (Array.isArray(env) && env !== undefined && env.length !== 0
       && !(isNaN(env[0].envdata.temp) || isNaN(env[0].envdata.humidity))) {
       let newChart = chartData.labels[0] === -1 ? { labels: [], data: [] } : { ...chartData };
       if (chartData.data.length >= 5) {
@@ -85,7 +85,8 @@ const WebEnv = () => {
         <Text style={componentStyles.URLBarTitle}>Backend URL:</Text>
         <URLField URL={URL} setURL={setURL} />
         <AboutModal visible={visible} setModalVisible={setModalVisible}
-          envBackend={env[0] !== undefined ? env[0].backend : { name: 'unknown', version: 'unknown' }} />
+          envBackend={Array.isArray(env) && env[0] !== undefined ?
+            env[0].backend : { name: 'unknown', version: 'unknown' }} />
         <ConnectText env={env} />
       </View>
     </ImageBackground>
