@@ -17,11 +17,21 @@ import utils from './services/WEUtils';
 import bgImage from './assets/background.jpg';
 
 const ShowCards = ({ env }) => {
-  if (!Array.isArray(env) || env === undefined || env.length === 0) {
+  if (env === undefined || env.length === 0) {
     return (
       <CircularLoading />
     );
-  } else {
+  } else if (!Array.isArray(env)) {
+    return (
+      <View style={[componentStyles.appContainer, { margin: 20 }]}>
+        <Text style={[componentStyles.textStyle, { fontSize: 24, color: colors0.blued, margin: 4 }]}>
+          A backend error has occurred.
+        </Text>
+        <Text style={{ fontSize: 20, fontFamily: 'monospace' }}>{`${env.name}:${env.message}`}</Text>
+      </View>
+    );
+  }
+  else {
     return (
       <Cards temperature={env[0].envdata.temp}
         humidity={env[0].envdata.humidity} />
@@ -42,7 +52,7 @@ const WebEnv = () => {
     setTimeout(() => {
       axios.get(URL)
         .then(response => setEnv(response.data))
-        .catch(e => setEnv('error'));
+        .catch(e => setEnv({ name: e.name, message: e.message }));
     }, 2000);
   }, [env]);
 
