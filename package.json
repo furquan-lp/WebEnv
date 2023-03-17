@@ -1,7 +1,7 @@
 {
   "name": "webenv",
   "homepage": "https://webenv.simpledev.site/",
-  "version": "0.9.8-cloudflare",
+  "version": "1.0.1-cloudflare",
   "repository": {
     "type": "git",
     "url": "https://github.com/furquan-lp/WebEnv.git"
