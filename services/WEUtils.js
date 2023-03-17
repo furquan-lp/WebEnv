@@ -1,15 +1,16 @@
 import { Platform, Dimensions } from 'react-native';
-import envmon from './envmon';
+import axios from 'axios';
 
 import { version, homepage, repository } from '../package.json';
 
 let backendRepo = "unavailable";
 
 const init = (setURL) => {
-  envmon.getAll(`${homepage}data/webenv.json`,).then(webenvData => {
-    backendRepo = webenvData.backendRepo;
-    setURL(webenvData.backendURL);
-  });
+  axios.get(`${homepage}data/webenv.json`)
+    .then(response => {
+      backendRepo = response.data.backendRepo;
+      setURL(response.data.backendURL);
+    });
 }
 
 const isWeb = () => {
