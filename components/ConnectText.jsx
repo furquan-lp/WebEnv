@@ -23,6 +23,10 @@ const ConnectText = ({ env }) => {
     return (
       <Text style={[style.container, style.text]}>Connecting...</Text>
     );
+  } else if (!Array.isArray(env)) {
+    return (
+      <Text style={[style.container, style.text]}>Couldn't find backend.</Text>
+    )
   } else {
     return (
       <View style={style.container}>
