@@ -4612,6 +4612,13 @@ expo-font@~11.1.1:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-font@~11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-11.2.0.tgz#291f6b7bc03f12b47092d99423798023b7a5dcac"
+  integrity sha512-inMAbHYiOU9P1Az2VajFu3xRoalyC206lGnj4qg9/IoovcB+s87eUQAlCoXOA5Dkgce8AJkQ6QjpFCAKMErkLA==
+  dependencies:
+    fontfaceobserver "^2.1.0"
+
 expo-keep-awake@~12.0.1:
   version "12.0.1"
   resolved "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-12.0.1.tgz"
