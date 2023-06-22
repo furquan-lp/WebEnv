@@ -33,4 +33,13 @@ const getRepoURL = () => {
   return repository.url;
 }
 
-export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL };
+const getChartData = (chartType, env) => {
+  switch (chartType) {
+    case 0: return env[0].envdata.temp;
+    case 1: return env[0].envdata.humidity;
+    case 3: return env[0].envdata.co2;
+    default: return env[0].envdata.temp;
+  }
+};
+
+export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL, getChartData };
