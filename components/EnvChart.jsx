@@ -16,7 +16,7 @@ const manufactureChartData = (chartData) => {
 };
 
 const EnvChart = ({ chartData, chartType }) =>
-  <View style={{ marginTop: 40, alignItems: 'center' }}>
+  <View style={{ marginTop: chartData.data.length ? 20 : 100, alignItems: 'center' }}>
     <LineChart
       data={manufactureChartData(chartData)}
       width={utils.isWeb() && !utils.isPortrait() ?
