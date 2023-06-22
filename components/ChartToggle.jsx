@@ -34,24 +34,26 @@ const styles = StyleSheet.create({
   }
 });
 
-const ChartToggle = ({ chartType, setChartType }) => {
-  const handleToggle = () => {
-    setChartType(chartType ^ 1);
-  }
-  return <View style={styles.container}>
-    <Pressable onPress={handleToggle} disabled={chartType === 0}
+const ChartToggle = ({ chartType, setChartType }) =>
+  <View style={styles.container}>
+    <Pressable onPress={() => setChartType(0)} disabled={chartType === 0}
       style={({ pressed }) => [
         styles.button, chartType === 0 ? styles.pressed : styles.nonPressed,
         pressed ? styles.active : null]}>
       <Text style={styles.buttonText}>Temperature</Text>
     </Pressable>
-    <Pressable onPress={handleToggle} disabled={chartType !== 0}
+    <Pressable onPress={() => setChartType(1)} disabled={chartType === 1}
       style={({ pressed }) => [
-        styles.button, chartType !== 0 ? styles.pressed : styles.nonPressed,
+        styles.button, chartType === 1 ? styles.pressed : styles.nonPressed,
         pressed ? styles.active : null]} >
       <Text style={styles.buttonText}>Humidity</Text>
     </Pressable>
+    <Pressable onPress={() => setChartType(2)} disabled={chartType === 2}
+      style={({ pressed }) => [
+        styles.button, chartType === 2 ? styles.pressed : styles.nonPressed,
+        pressed ? styles.active : null]} >
+      <Text style={styles.buttonText}>CO2 PPM</Text>
+    </Pressable>
   </View >;
-};
 
 export default ChartToggle;
