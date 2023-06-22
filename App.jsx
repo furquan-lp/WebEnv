@@ -73,7 +73,7 @@ const WebEnv = () => {
         newChart.data.shift();
         newChart.labels.shift();
       }
-      newChart.data.push(Number(chartType === 0 ? env[0].envdata.temp : env[0].envdata.humidity));
+      newChart.data.push(Number(utils.getChartData(chartType, env)));
       newChart.labels.push(
         env[0].uptime.hours + ':' + env[0].uptime.minutes + ':' + env[0].uptime.seconds);
       setChartData(newChart);
