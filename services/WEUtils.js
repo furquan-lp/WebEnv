@@ -37,7 +37,7 @@ const getChartData = (chartType, env) => {
   switch (chartType) {
     case 0: return env[0].envdata.temp;
     case 1: return env[0].envdata.humidity;
-    case 3: return env[0].envdata.co2;
+    case 2: return env[0].envdata.co2;
     default: return env[0].envdata.temp;
   }
 };
@@ -46,7 +46,7 @@ const getChartSuffix = (chartType) => {
   switch (chartType) {
     case 0: return '°C';
     case 1: return '%';
-    case 3: return 'PPM';
+    case 2: return 'PPM';
     default: return '??';
   }
 };
