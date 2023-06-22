@@ -58,13 +58,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const Cards = ({ temperature, humidity }) =>
+const Cards = ({ temperature, humidity, ppm }) =>
   <View style={{ display: 'flex', flexDirection: 'column' }}>
     <View style={styles.cards}>
       <TempCard temperature={temperature} />
       <HumidCard humidity={humidity} />
     </View>
-    <PPMCard ppm={350} />
+    <PPMCard ppm={ppm} />
   </View>;
 
 const TempCard = ({ temperature }) =>
