@@ -22,7 +22,7 @@ const EnvChart = ({ chartData, chartType }) =>
       width={utils.isWeb() && !utils.isPortrait() ?
         470 : Dimensions.get("window").width - 10} // from react-native
       height={220}
-      yAxisSuffix={chartType == 0 ? '°C' : '%'}
+      yAxisSuffix={utils.getChartSuffix(chartType)}
       yAxisInterval={2}
       chartConfig={{
         backgroundColor: colors0.bluel,
