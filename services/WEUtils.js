@@ -11,7 +11,7 @@ const init = (setURL) => {
       backendRepo = response.data.backendRepo;
       setURL(response.data.backendURL);
     });
-}
+};
 
 const isWeb = () => {
   return (Platform.OS === 'web');
@@ -31,7 +31,7 @@ const getAppVersion = () => {
 
 const getRepoURL = () => {
   return repository.url;
-}
+};
 
 const getChartData = (chartType, env) => {
   switch (chartType) {
@@ -42,4 +42,13 @@ const getChartData = (chartType, env) => {
   }
 };
 
-export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL, getChartData };
+const getChartSuffix = (chartType) => {
+  switch (chartType) {
+    case 0: return '°C';
+    case 1: return '%';
+    case 3: return 'PPM';
+    default: return '??';
+  }
+};
+
+export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL, getChartData, getChartSuffix };
