@@ -30,7 +30,7 @@ const ConnectText = ({ env }) => {
   } else {
     return (
       <View style={style.container}>
-        <Text style={style.text}>Conntected.</Text>
+        <Text style={style.text}>Connected.</Text>
         <Text style={style.text}>Up {env[0].uptime.hours}:{env[0].uptime.minutes}:{env[0].uptime.seconds}</Text>
       </View>
     );
