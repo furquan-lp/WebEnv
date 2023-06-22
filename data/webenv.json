@@ -1,5 +1,0 @@
-{
-  "version": "1.1.0-cloudflare",
-  "backendURL": "https://envmon.nextdev.in/",
-  "backendRepo": "https://github.com/furquan-lp/envmon-minimal"
-}
