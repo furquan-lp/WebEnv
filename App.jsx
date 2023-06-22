@@ -39,8 +39,7 @@ const ShowCards = ({ env }) => {
   }
   else {
     return (
-      <Cards temperature={env[0].envdata.temp}
-        humidity={env[0].envdata.humidity} />
+      <Cards temperature={env[0].envdata.temp} humidity={env[0].envdata.humidity} ppm={env[0].envdata.co2} />
     );
   }
 }
