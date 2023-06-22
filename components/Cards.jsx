@@ -1,24 +1,28 @@
 import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import FIcon from 'react-native-vector-icons/Feather';
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { colors0, colors1 } from './ComponentStyles';
 import utils from '../services/WEUtils';
 
 const styles = StyleSheet.create({
   cards: {
-    flex: 1,
+    display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     padding: 5,
     marginVertical: 10
   },
   card: {
     flex: 1,
-    backgroundColor: utils.isWeb() ? 'rgba(231, 234, 246, 0.5)' : colors0.mist, // colors0.mist
     borderRadius: 10,
     height: 150,
     alignItems: 'center',
     justifyContent: 'center',
     margin: 6,
+  },
+  cardColorShadow: {
+    backgroundColor: utils.isWeb() ? 'rgba(231, 234, 246, 0.5)' : colors0.mist, // colors0.mist
     shadowColor: colors1.blued,
     shadowOffset: {
       width: 0,
@@ -55,14 +59,18 @@ const styles = StyleSheet.create({
 });
 
 const Cards = ({ temperature, humidity }) =>
-  <View style={styles.cards}>
-    <TempCard temperature={temperature} /><HumidCard humidity={humidity} />
+  <View style={{ display: 'flex', flexDirection: 'column' }}>
+    <View style={styles.cards}>
+      <TempCard temperature={temperature} />
+      <HumidCard humidity={humidity} />
+    </View>
+    <PPMCard ppm={350} />
   </View>;
 
 const TempCard = ({ temperature }) =>
-  <View style={styles.card}>
+  <View style={[styles.card, styles.cardColorShadow]}>
     <View style={styles.wrapper}>
-      <Icon
+      <FIcon
         name="thermometer"
         color={colors1.blued}
         size={utils.isWeb() ? 70 : 50} />
@@ -72,9 +80,9 @@ const TempCard = ({ temperature }) =>
   </View>;
 
 const HumidCard = ({ humidity }) =>
-  <View style={styles.card}>
+  <View style={[styles.card, styles.cardColorShadow]}>
     <View style={styles.wrapper}>
-      <Icon
+      <FIcon
         name="droplet"
         color={colors1.blued}
         size={utils.isWeb() ? 55 : 50} />
@@ -82,6 +90,18 @@ const HumidCard = ({ humidity }) =>
     </View>
     <Text style={styles.text}>%</Text>
   </View>;
+
+const PPMCard = ({ ppm }) =>
+  <View style={[{
+    display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginHorizontal: 5, padding: 5,
+    borderRadius: 10
+  }, styles.cardColorShadow]}>
+    <MIcon
+      name="molecule-co2"
+      color={colors1.blued}
+      size={utils.isWeb() ? 60 : 55} />
+    <Text style={styles.text}>{ppm} PPM</Text>
+  </View>
 
 
 export default Cards;
