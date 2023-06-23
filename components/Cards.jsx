@@ -85,9 +85,8 @@ const HumidCard = ({ humidity }) =>
         name="droplet"
         color={colors1.blued}
         size={utils.isWeb() && !utils.isPortrait() ? 55 : 50} />
-      <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}</Text>
+      <Text style={[styles.text, { letterSpacing: 4 }]}>{Number(humidity).toFixed(1)}%</Text>
     </View>
-    <Text style={styles.text}>%</Text>
   </View>;
 
 const PPMCard = ({ ppm }) =>
