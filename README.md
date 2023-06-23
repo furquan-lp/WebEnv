@@ -11,3 +11,5 @@ ESP32 IoT device webserver ([envmon](https://github.com/furquan-lp/envmon-minima
 View a live web version here: [WebEnv at NEXTDEV](https://webenv.nextdev.in/)
 
 Learn more about it here: [Introducing WebEnv](https://tctp.xyz/)
+
+Special thanks to Aditya @ developersIndia Discord for finding bugs on the mobile site.
