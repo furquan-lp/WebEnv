@@ -2,6 +2,8 @@ import { View, Pressable, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { colors0, colors1 } from './ComponentStyles';
 
+import utils from '../services/WEUtils';
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -11,7 +13,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 25,
+    fontSize: utils.isWeb() && !utils.isPortrait() ? 25 : 20,
     fontWeight: 'bold',
     textAlign: 'center'
   },
