@@ -42,14 +42,14 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors0.blued,
-    fontSize: utils.isWeb() ? 44 : 34,
+    fontSize: utils.isWeb() && !utils.isPortrait() ? 44 : 34,
     fontWeight: 'bold',
     margin: 0,
     letterSpacing: 1
   },
   subtitle: {
     color: colors0.bluel,
-    fontSize: utils.isWeb() ? 36 : 30,
+    fontSize: utils.isWeb() && !utils.isPortrait() ? 36 : 30,
     alignSelf: 'flex-end',
     margin: 5,
     marginTop: 0,
@@ -72,7 +72,7 @@ const TempCard = ({ temperature }) =>
       <FIcon
         name="thermometer"
         color={colors1.blued}
-        size={utils.isWeb() ? 70 : 50} />
+        size={utils.isWeb() && !utils.isPortrait() ? 70 : 50} />
       <Text style={styles.text}>{Number(temperature)}&#176;C</Text>
     </View>
     <Text style={styles.subtitle}>{((temperature * 1.8) + 32).toFixed(2)}&#176;F</Text>
@@ -84,7 +84,7 @@ const HumidCard = ({ humidity }) =>
       <FIcon
         name="droplet"
         color={colors1.blued}
-        size={utils.isWeb() ? 55 : 50} />
+        size={utils.isWeb() && !utils.isPortrait() ? 55 : 50} />
       <Text style={[styles.text, { letterSpacing: 4 }]}>{humidity}</Text>
     </View>
     <Text style={styles.text}>%</Text>
@@ -98,7 +98,7 @@ const PPMCard = ({ ppm }) =>
     <MIcon
       name="molecule-co2"
       color={colors1.blued}
-      size={utils.isWeb() ? 60 : 55} />
+      size={utils.isWeb() && !utils.isPortrait() ? 60 : 55} />
     <Text style={styles.text}>{ppm} PPM</Text>
   </View>
 
