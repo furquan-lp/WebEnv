@@ -51,4 +51,14 @@ const getChartSuffix = (chartType) => {
   }
 };
 
-export default { init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL, getChartData, getChartSuffix };
+const getChartMargin = (chartData) => {
+  if (chartData.data.length) {
+    return isWeb() && !isPortrait() ? 20 : 0;
+  } else {
+    return isWeb() && !isPortrait() ? 100 : 50;
+  }
+};
+
+export default {
+  init, isWeb, isPortrait, getOS, getAppVersion, getRepoURL, getChartData, getChartSuffix, getChartMargin
+};
