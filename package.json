@@ -1,7 +1,7 @@
 {
   "name": "webenv",
   "homepage": "https://webenv.nextdev.in/",
-  "version": "1.2.3-cloudflare",
+  "version": "1.2.5-cloudflare",
   "repository": {
     "type": "git",
     "url": "https://github.com/furquan-lp/WebEnv.git"
