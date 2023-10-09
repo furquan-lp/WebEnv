@@ -1,5 +1,5 @@
 {
   "version": "1.2.5-cloudflare",
-  "backendURL": "https://furquan-lp--2.gh.srv.us/",
+  "backendURL": "https://envmon.espdev.cloud/",
   "backendRepo": "https://github.com/furquan-lp/envmon-minimal"
 }
