@@ -1,5 +1,5 @@
 {
-  "version": "1.2.5-cloudflare",
-  "backendURL": "https://envmon.espdev.cloud/",
+  "version": "1.4A-20231703",
+  "backendURL": "https://envmon.sorcerer.live/",
   "backendRepo": "https://github.com/furquan-lp/envmon-minimal"
 }
